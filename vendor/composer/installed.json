@@ -1,0 +1,122 @@
+[
+  {
+    "name": "telegram-bot/api",
+    "version": "v2.2.2",
+    "version_normalized": "2.2.2.0",
+    "source": {
+      "type": "git",
+      "url": "https://github.com/TelegramBot/Api.git",
+      "reference": "bd5658a380db93100fc1ecd78227c658250f3439"
+    },
+    "dist": {
+      "type": "zip",
+      "url": "https://api.github.com/repos/TelegramBot/Api/zipball/bd5658a380db93100fc1ecd78227c658250f3439",
+      "reference": "bd5658a380db93100fc1ecd78227c658250f3439",
+      "shasum": ""
+    },
+    "require": {
+      "php": ">=5.5.0"
+    },
+    "require-dev": {
+      "codeception/codeception": "*",
+      "phpunit/phpunit": "4.*",
+      "squizlabs/php_codesniffer": "2.*"
+    },
+    "time": "2015-10-25 16:57:45",
+    "type": "library",
+    "extra": {
+      "branch-alias": {
+        "dev-master": "1.0-dev"
+      }
+    },
+    "installation-source": "dist",
+    "autoload": {
+      "psr-4": {
+        "TelegramBot\\Api\\": "src"
+      }
+    },
+    "notification-url": "https://packagist.org/downloads/",
+    "license": [
+      "MIT"
+    ],
+    "authors": [
+      {
+        "name": "Ilya Gusev",
+        "email": "mail@igusev.ru",
+        "homepage": "https://php-cat.com",
+        "role": "Developer"
+      }
+    ],
+    "description": "PHP Wrapper for Telegram Bot API",
+    "homepage": "https://github.com/TelegramBot/Api",
+    "keywords": [
+      "bot",
+      "bot api",
+      "php",
+      "telegram"
+    ]
+  },
+  {
+    "name": "phpmailer/phpmailer",
+    "version": "v5.2.14",
+    "version_normalized": "5.2.14.0",
+    "source": {
+      "type": "git",
+      "url": "https://github.com/PHPMailer/PHPMailer.git",
+      "reference": "e774bc9152de85547336e22b8926189e582ece95"
+    },
+    "dist": {
+      "type": "zip",
+      "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/e774bc9152de85547336e22b8926189e582ece95",
+      "reference": "e774bc9152de85547336e22b8926189e582ece95",
+      "shasum": ""
+    },
+    "require": {
+      "php": ">=5.0.0"
+    },
+    "require-dev": {
+      "phpdocumentor/phpdocumentor": "*",
+      "phpunit/phpunit": "4.7.*"
+    },
+    "suggest": {
+      "league/oauth2-client": "Needed for XOAUTH2 authentication",
+      "league/oauth2-google": "Needed for Gmail XOAUTH2"
+    },
+    "time": "2015-11-01 10:15:28",
+    "type": "library",
+    "installation-source": "dist",
+    "autoload": {
+      "classmap": [
+        "class.phpmailer.php",
+        "class.phpmaileroauth.php",
+        "class.phpmaileroauthgoogle.php",
+        "class.smtp.php",
+        "class.pop3.php",
+        "extras/EasyPeasyICS.php",
+        "extras/ntlm_sasl_client.php"
+      ]
+    },
+    "notification-url": "https://packagist.org/downloads/",
+    "license": [
+      "LGPL-2.1"
+    ],
+    "authors": [
+      {
+        "name": "Jim Jagielski",
+        "email": "jimjag@gmail.com"
+      },
+      {
+        "name": "Marcus Bointon",
+        "email": "phpmailer@synchromedia.co.uk"
+      },
+      {
+        "name": "Andy Prevost",
+        "email": "codeworxtech@users.sourceforge.net"
+      },
+      {
+        "name": "Brent R. Matzelle"
+      }
+    ],
+    "description": "PHPMailer is a full-featured email creation and transfer class for PHP"
+  }
+]

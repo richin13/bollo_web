@@ -1,0 +1,121 @@
+html, body {
+    height: 100% !important;
+}
+
+#bollo-top-bar i,
+#cp-navbar i {
+    padding-right: .5em !important;
+}
+
+#bollo-top-bar {
+    border-radius: 0;
+}
+
+#content-wrapper {
+    min-height: 100%;
+    margin-bottom: -10%;
+    position: relative;
+}
+
+@media (min-width: 765px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}
+
+nav.sidebar, .main {
+    -webkit-transition: margin 200ms ease-out;
+    -moz-transition: margin 200ms ease-out;
+    -o-transition: margin 200ms ease-out;
+    transition: margin 200ms ease-out;
+}
+
+.main {
+    padding: 10px 10px 0 10px;
+}
+
+.gcaptcha {
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+}
+
+section {
+    padding-left: 15px;
+}
+
+/* ===== Website's footer ======*/
+.clearfooter {
+    height: 20%;
+    clear: both;
+}
+
+.footer {
+    height: 10%;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: white; /*#f5f5f5;*/
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* ======= HOVER EFFECTS IN EDIT BAKERY ========*/
+.bakery-name-h small {
+    font-size: 50% !important;
+    opacity: 0;
+    transition: opacity .3s;
+    margin-right: .5em;
+}
+
+.bakery-name-h:hover small {
+    opacity: 1;
+}
+
+.bakery-name-h:hover small:hover {
+    opacity: 1;
+}
+
+.delete-bakery {
+    color: #d51114;
+}
+
+/* ======= 404 =========*/
+@media (min-width: 765px) {
+    .size404 {
+        font-size: 8em !important;
+        cursor: default;
+    }
+}
+/* ======= COLORS ======= */
+.color-red {
+    color: #ff1215;
+}
+
+.color-black {
+    color: #000;
+}
+
+.color-gray {
+    color: #517a89
+}
+
+.color-brown {
+    color: #895220;
+}
+
+/* ====== UTILS ====== */
+.fake_link {
+    cursor: pointer;
+}

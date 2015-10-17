@@ -6,19 +6,12 @@
  * Date: 11/10/15
  * Time: 05:28 PM
  */
-class Person {
-    public $id;
-    public $first_name;
-    public $last_name;
-    public $username;
-    public $email;
-
-    /**
-     * @return mixed
-     */
-    public function getFirstName() {
-        return $this->first_name;
-    }
+class Person implements JsonSerializable {
+    private $id;
+    private $first_name;
+    private $last_name;
+    private $username;
+    private $email;
 
     /**
      * Person constructor.
@@ -29,11 +22,28 @@ class Person {
      * @param $email string the person's email address.
      */
     public function __construct($id, $first_name, $last_name, $username, $email) {
-        $this->id = $id;
+        $this->id = (int)$id;
         $this->first_name = $first_name;
         $this->last_name = $last_name;
         $this->username = $username;
         $this->email = $email;
+    }
+
+    /**
+     * Specify data which should be serialized to JSON
+     * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     * @since 5.4.0
+     */
+    function jsonSerialize() {
+        return [
+            "id" => $this->getId(),
+            "first_name" => $this->getFirstName(),
+            "last_name" => $this->getLastName(),
+            "username" => $this->getUsername(),
+            "email" => $this->getEmail()
+        ];
     }
 
     /**
@@ -48,6 +58,13 @@ class Person {
      */
     public function setId($id) {
         $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFirstName() {
+        return $this->first_name;
     }
 
     /**
@@ -98,6 +115,4 @@ class Person {
     public function setEmail($email) {
         $this->email = $email;
     }
-
-
 }

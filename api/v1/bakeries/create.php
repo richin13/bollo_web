@@ -7,36 +7,24 @@
  */
 
 include('../../../config.php');
-require_once(DIR_BOLLO . '/core/query.php');
-require_once(DIR_BOLLO . '/core/email.php');
 
-header('Content-type: application/json');
+header('Content-type: application/json; charset=utf-8');
 $response = array();
 
-if (isset($_GET['api_token'])) {
-    $token = $_GET['api_token'];
+$all_set = isset($_GET['name']) && isset($_GET['state']) &&
+    isset($_GET['city']);
 
-    if (check_api_token($token)) {
-        $all_set = isset($_GET['name']) && isset($_GET['state']) &&
-            isset($_GET['city']);
-
-        if ($all_set) {
-            $bakery_name = $_GET['name'];
-            $bakery_state = $_GET['state'];
-            $bakery_city = $_GET['city'];
-            if (add_bakery($bakery_name, $bakery_state, $bakery_city)) {
-                $response = array("code" => 0, "message" => "Ok!");
-            } else {
-                $response = array("code" => 16, "message" => "Error inserting the bakery!");
-            }
-        } else {
-            $response = array("code" => 17, "message" => "Missing parameters!");
-        }
+if ($all_set) {
+    $bakery_name = $_GET['name'];
+    $bakery_state = $_GET['state'];
+    $bakery_city = $_GET['city'];
+    if (($id = add_bakery($bakery_name, $bakery_state, $bakery_city))) {
+        $response = array("code" => 0, "message" => "Ok!", "bakery" => get_bakery((int)$id)[0]);
     } else {
-        $response = array("code" => -1, "message" => "Invalid API token!");
+        $response = array("code" => 1, "message" => "Error inserting the bakery!");
     }
 } else {
-    $response = array("code" => -2, "message" => "Missing security token!");
+    $response = array("code" => 15, "message" => "Missing parameters!");
 }
 
 echo json_encode($response, JSON_PRETTY_PRINT);
